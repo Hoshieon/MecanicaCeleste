@@ -1,0 +1,52 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
+from numpy import *
+
+x=float(input("x"))
+y=float(input("y"))
+z=float(input("z"))
+
+vx=float(input("vx"))
+vy=float(input("vy"))
+vz=float(input("vz"))
+
+r=(x**2+y**2+z**2)**(0.5)
+v=(vx**2+vy**2+vz**2)**(0.5)
+
+m1=float(input("m1"))
+m2=float(input("m2"))
+mr=(m1/m2)
+print(mr)
+
+
+# In[8]:
+
+
+from scipy.misc import *
+def f(x):
+    return(x**2)
+
+s=derivative(f,2.0)
+print(s)
+
+
+# In[18]:
+
+
+from sympy import *
+
+x, y, z = symbols('x y z')
+init_printing(use_unicode=True)
+f="z*tan(x)-y*cos(x)**2"
+g=5564
+A=["x","y","z"]
+grad=[]
+for i in A:
+    grad.append(diff(f, i))
+print(grad)
+
+
